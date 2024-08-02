@@ -1,37 +1,35 @@
-// to get current year
-function getYear() {
-    var currentDate = new Date();
-    var currentYear = currentDate.getFullYear();
-    document.querySelector("#displayYear").innerHTML = currentYear;
+// Get Current Year
+function getCurrentYear() {
+    var d = new Date();
+    var year = d.getFullYear();
+    document.querySelector("#displayDateYear").innerText = year;
 }
+getCurrentYear()
 
-getYear();
-
-
-$('.custom_slick_slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    fade: true,
-    adaptiveHeight: true,
-    asNavFor: '.slick_slider_nav',
-    responsive: [{
-        breakpoint: 768,
-        settings: {
-            dots: false
+//client section owl carousel
+$(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    dots: false,
+    navText: [
+        '<i class="fa fa-long-arrow-left" aria-hidden="true"></i>',
+        '<i class="fa fa-long-arrow-right" aria-hidden="true"></i>'
+    ],
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+        0: {
+            items: 1
+        },
+        768: {
+            items: 2
+        },
+        1000: {
+            items: 2
         }
-    }]
-})
-
-$('.slick_slider_nav').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: '.custom_slick_slider',
-    centerMode: false,
-    focusOnSelect: true,
-    variableWidth: true
+    }
 });
-
 
 /** google_map js **/
 
